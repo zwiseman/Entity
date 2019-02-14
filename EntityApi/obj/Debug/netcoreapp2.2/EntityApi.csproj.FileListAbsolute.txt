@@ -1,0 +1,14 @@
+/Users/zacharywiseman/Documents/code/Entity/EntityApi/bin/Debug/netcoreapp2.2/EntityApi.deps.json
+/Users/zacharywiseman/Documents/code/Entity/EntityApi/bin/Debug/netcoreapp2.2/EntityApi.runtimeconfig.json
+/Users/zacharywiseman/Documents/code/Entity/EntityApi/bin/Debug/netcoreapp2.2/EntityApi.runtimeconfig.dev.json
+/Users/zacharywiseman/Documents/code/Entity/EntityApi/bin/Debug/netcoreapp2.2/EntityApi.dll
+/Users/zacharywiseman/Documents/code/Entity/EntityApi/bin/Debug/netcoreapp2.2/EntityApi.pdb
+/Users/zacharywiseman/Documents/code/Entity/EntityApi/obj/Debug/netcoreapp2.2/EntityApi.csprojAssemblyReference.cache
+/Users/zacharywiseman/Documents/code/Entity/EntityApi/obj/Debug/netcoreapp2.2/EntityApi.csproj.CoreCompileInputs.cache
+/Users/zacharywiseman/Documents/code/Entity/EntityApi/obj/Debug/netcoreapp2.2/EntityApi.RazorAssemblyInfo.cache
+/Users/zacharywiseman/Documents/code/Entity/EntityApi/obj/Debug/netcoreapp2.2/EntityApi.RazorAssemblyInfo.cs
+/Users/zacharywiseman/Documents/code/Entity/EntityApi/obj/Debug/netcoreapp2.2/EntityApi.AssemblyInfoInputs.cache
+/Users/zacharywiseman/Documents/code/Entity/EntityApi/obj/Debug/netcoreapp2.2/EntityApi.AssemblyInfo.cs
+/Users/zacharywiseman/Documents/code/Entity/EntityApi/obj/Debug/netcoreapp2.2/EntityApi.RazorTargetAssemblyInfo.cache
+/Users/zacharywiseman/Documents/code/Entity/EntityApi/obj/Debug/netcoreapp2.2/EntityApi.dll
+/Users/zacharywiseman/Documents/code/Entity/EntityApi/obj/Debug/netcoreapp2.2/EntityApi.pdb

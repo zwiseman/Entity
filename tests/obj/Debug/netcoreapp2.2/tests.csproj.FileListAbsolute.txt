@@ -1,0 +1,17 @@
+/Users/zacharywiseman/Documents/code/Entity/tests/bin/Debug/netcoreapp2.2/xunit.runner.visualstudio.dotnetcore.testadapter.dll
+/Users/zacharywiseman/Documents/code/Entity/tests/bin/Debug/netcoreapp2.2/xunit.runner.reporters.netcoreapp10.dll
+/Users/zacharywiseman/Documents/code/Entity/tests/bin/Debug/netcoreapp2.2/xunit.runner.utility.netcoreapp10.dll
+/Users/zacharywiseman/Documents/code/Entity/tests/bin/Debug/netcoreapp2.2/tests.deps.json
+/Users/zacharywiseman/Documents/code/Entity/tests/bin/Debug/netcoreapp2.2/tests.runtimeconfig.json
+/Users/zacharywiseman/Documents/code/Entity/tests/bin/Debug/netcoreapp2.2/tests.runtimeconfig.dev.json
+/Users/zacharywiseman/Documents/code/Entity/tests/bin/Debug/netcoreapp2.2/tests.dll
+/Users/zacharywiseman/Documents/code/Entity/tests/bin/Debug/netcoreapp2.2/tests.pdb
+/Users/zacharywiseman/Documents/code/Entity/tests/obj/Debug/netcoreapp2.2/tests.csprojAssemblyReference.cache
+/Users/zacharywiseman/Documents/code/Entity/tests/obj/Debug/netcoreapp2.2/tests.csproj.CoreCompileInputs.cache
+/Users/zacharywiseman/Documents/code/Entity/tests/obj/Debug/netcoreapp2.2/tests.AssemblyInfoInputs.cache
+/Users/zacharywiseman/Documents/code/Entity/tests/obj/Debug/netcoreapp2.2/tests.AssemblyInfo.cs
+/Users/zacharywiseman/Documents/code/Entity/tests/obj/Debug/netcoreapp2.2/tests.dll
+/Users/zacharywiseman/Documents/code/Entity/tests/obj/Debug/netcoreapp2.2/tests.pdb
+/Users/zacharywiseman/Documents/code/Entity/tests/bin/Debug/netcoreapp2.2/EntityApi.dll
+/Users/zacharywiseman/Documents/code/Entity/tests/bin/Debug/netcoreapp2.2/EntityApi.pdb
+/Users/zacharywiseman/Documents/code/Entity/tests/obj/Debug/netcoreapp2.2/tests.csproj.CopyComplete
