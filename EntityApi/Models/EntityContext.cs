@@ -24,7 +24,7 @@ namespace EntityApi
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(Configuration.GetConnectionString("TestDB"));
+                optionsBuilder.UseSqlServer("Data Source=127.0.0.1;Initial Catalog=Test;User id=sa;Password=Dell1234");
             }
         }
 
