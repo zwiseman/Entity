@@ -1,28 +1,41 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { Components } from 'components/index';
-import { Services } from 'services/index';
-import { Pipes } from 'pipes/index';
 import { HttpClientModule } from '@angular/common/http';
-import { NavbarComponent } from './navbar/navbar.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatDialogModule, MatFormFieldModule, MatInputModule, MAT_LABEL_GLOBAL_OPTIONS, MatButtonModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { AppComponent } from './app.component';
+import { Pipes } from 'pipes/index';
+import { Services } from 'services/index';
+import { Components, EditEmployeeComponent } from 'components/index';
+import { CreateEmployeeComponent } from 'components/create-employee/create-employee.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     Components,
-    NavbarComponent
+    Pipes
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule
   ],
-  providers: [ Services ],
-  bootstrap: [AppComponent]
+  providers: [
+    Services,
+    {provide: MAT_LABEL_GLOBAL_OPTIONS, useValue: {float: 'always'}}
+   ],
+  bootstrap: [AppComponent],
+  entryComponents: [ EditEmployeeComponent, CreateEmployeeComponent ]
 })
 export class AppModule { }

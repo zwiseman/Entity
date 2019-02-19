@@ -34,12 +34,21 @@ namespace EntityApi {
         }
 
         [HttpPost]
-        public void PostEmployee([FromBody]Employees[] employees) {
-            foreach (var employee in employees)
-            {
-                entityContext.Employees.Add(employee);
-                entityContext.SaveChanges();
-            }
+        public void PostEmployee([FromBody]Employees employee) {
+            entityContext.Employees.Add(employee);
+            entityContext.SaveChanges();
+        }
+
+        [HttpPut]
+        public void PutEmployee([FromBody]Employees employee) {
+            entityContext.Update(employee);
+            entityContext.SaveChanges();
+        }
+
+        [HttpPost("deleteEmployee")]
+        public void DeleteEmployee([FromBody]Employees employee) {
+            entityContext.Remove(employee);
+            entityContext.SaveChanges();
         }
     }
 }
