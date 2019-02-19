@@ -1,9 +1,8 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.Extensions.Configuration;
 
-namespace EntityApi
+namespace EntityApi.Models
 {
     public partial class EntityContext : DbContext
     {
@@ -17,13 +16,12 @@ namespace EntityApi
         }
 
         public virtual DbSet<Employees> Employees { get; set; }
-        
-        public IConfiguration Configuration { get; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
                 optionsBuilder.UseSqlServer("Data Source=127.0.0.1;Initial Catalog=Test;User id=sa;Password=Dell1234");
             }
         }
@@ -34,9 +32,11 @@ namespace EntityApi
 
             modelBuilder.Entity<Employees>(entity =>
             {
-                entity.Property(e => e.Id)
-                    .HasColumnName("ID")
-                    .ValueGeneratedNever();
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.Address)
+                    .HasMaxLength(255)
+                    .IsUnicode(false);
 
                 entity.Property(e => e.Equipment)
                     .IsRequired()

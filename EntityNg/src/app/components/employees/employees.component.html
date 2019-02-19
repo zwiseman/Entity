@@ -1,3 +1,7 @@
-<p>
+<p (click)="log()">
   employees works!
 </p>
+
+<button class="btn btn-primary" (click)="log()">Submit</button>
+
+<input type="text" [(ngModel)]="value" (ngModelChange)="change()" class="form-control" placeholder="Enter nodes sperated by a comma(,)">

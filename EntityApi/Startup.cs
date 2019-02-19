@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
+using EntityApi.Models;
 
 namespace EntityApi
 {
@@ -26,10 +27,16 @@ namespace EntityApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options => {
+                options.AddPolicy("AllowSpecificOrigin",
+                    builder => {
+                        builder.WithOrigins("http://localhost:4200")
+                            .AllowAnyMethod()
+                            .AllowAnyHeader();
+                    });
+            });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
                              .AddJsonOptions(x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
-            services.AddCors();
-              
 
             services.AddDbContext<EntityContext> (options => options.UseSqlServer(Configuration.GetConnectionString("TestDB")));
         }
@@ -37,6 +44,7 @@ namespace EntityApi
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseCors("AllowSpecificOrigin");
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -48,12 +56,6 @@ namespace EntityApi
             }
 
             app.UseMvc();
-            app.UseCors(builder => {
-                builder.AllowAnyHeader()
-                       .AllowAnyMethod()
-                       .AllowAnyOrigin()
-                       .AllowCredentials();
-            });
         }
     }
 }

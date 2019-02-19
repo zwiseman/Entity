@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
+using EntityApi.Models;
 
 namespace EntityApi {
     [Route ("employees")]
@@ -17,7 +18,6 @@ namespace EntityApi {
             List<Employees> employees = new List<Employees>();
             Employees newOne = new Employees();
             string prettyEmployees;
-            newOne.Id = 20;
             newOne.LastName = "Mulaney";
             newOne.FirstName="John";
             newOne.Equipment = "Mic and Saltines";
@@ -31,6 +31,15 @@ namespace EntityApi {
             }
             prettyEmployees = JsonConvert.SerializeObject(employees, Formatting.Indented);
             return prettyEmployees;
+        }
+
+        [HttpPost]
+        public void PostEmployee([FromBody]Employees[] employees) {
+            foreach (var employee in employees)
+            {
+                entityContext.Employees.Add(employee);
+                entityContext.SaveChanges();
+            }
         }
     }
 }
