@@ -42,11 +42,8 @@ export class EditEmployeeComponent implements OnInit, OnDestroy {
   }
 
   update() {
-    this.dialofRef.disableClose = true;
-    this.disabled = true;
     this.subscription = this.employeeService.putEmployee(this.employee).subscribe(data => {
-      this.dialofRef.disableClose = false;
-      window.location.reload();
+      this.dialofRef.close();
     });
   }
 

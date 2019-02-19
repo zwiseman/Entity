@@ -19,9 +19,7 @@ export class EmployeesComponent implements OnInit, OnDestroy {
     private router: Router) { }
 
   ngOnInit() {
-    this.subscription = this.employeeService.getEmployeesObserve().subscribe(data => {
-      this.employees = data;
-    });
+    this.getData();
   }
 
   ngOnDestroy() {
@@ -30,10 +28,15 @@ export class EmployeesComponent implements OnInit, OnDestroy {
     }
   }
 
+  getData() {
+    this.subscription = this.employeeService.getEmployeesObserve().subscribe(data => {
+      this.employees = data;
+    });
+  }
+
   delete(employee) {
     this.subscription = this.employeeService.deleteEmployee(employee).subscribe(data => {
-      console.log('deleted');
-      this.router.navigateByUrl('/employees');
+      this.getData();
     });
   }
 
@@ -42,11 +45,17 @@ export class EmployeesComponent implements OnInit, OnDestroy {
       width: '250px',
       data: employee
     });
+    dialogRef.afterClosed().subscribe(() => {
+      this.getData();
+    });
   }
 
   create() {
     const dialogRef = this.dialog.open(CreateEmployeeComponent, {
       width: '250px'
+    });
+    dialogRef.afterClosed().subscribe(() => {
+      this.getData();
     });
   }
 }
