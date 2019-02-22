@@ -22,7 +22,7 @@ namespace EntityApi.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Data Source=127.0.0.1;Initial Catalog=Test;User id=sa;Password=Dell1234");
+                optionsBuilder.UseSqlServer("Data Source=devdb.caltow95tbnk.us-east-2.rds.amazonaws.com,1433;Initial Catalog=entity;User id=sa;Password=Dell1234");
             }
         }
 
@@ -35,6 +35,7 @@ namespace EntityApi.Models
                 entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.Property(e => e.Address)
+                    .IsRequired()
                     .HasMaxLength(255)
                     .IsUnicode(false);
 

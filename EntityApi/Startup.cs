@@ -31,6 +31,7 @@ namespace EntityApi
                 options.AddPolicy("AllowSpecificOrigin",
                     builder => {
                         builder.WithOrigins("http://localhost:4200")
+                            .WithOrigins("http://zwiseman.com.s3-website-us-east-1.amazonaws.com")
                             .AllowAnyMethod()
                             .AllowAnyHeader();
                     });

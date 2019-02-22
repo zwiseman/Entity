@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 using EntityApi.Models;
 
 namespace EntityApi {
-    [Route ("employees")]
+    [Route ("employees/")]
     [ApiController]
     public class EmployeeController {
         EntityContext entityContext = new EntityContext ();
