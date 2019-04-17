@@ -14,23 +14,18 @@ namespace EntityApi {
         EntityContext entityContext = new EntityContext ();
 
         [HttpGet]
-        public string Get () {
+        public List<Employees> Get () {
             List<Employees> employees = new List<Employees>();
             Employees newOne = new Employees();
-            string prettyEmployees;
-            newOne.LastName = "Mulaney";
-            newOne.FirstName="John";
-            newOne.Equipment = "Mic and Saltines";
-            newOne.Job = "Comic";
 
-            // entityContext.Employees.Add(newOne);
-            // entityContext.SaveChanges();
+            Console.WriteLine("We are in the employees get before the entity contet reference");
             foreach (var employee in entityContext.Employees)
             {
                 employees.Add(employee);
+                Console.WriteLine("we added an employee");
             }
-            prettyEmployees = JsonConvert.SerializeObject(employees, Formatting.Indented);
-            return prettyEmployees;
+            Console.WriteLine("We should return the employees");
+            return employees;
         }
 
         [HttpPost]

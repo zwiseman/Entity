@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
 using EntityApi.Models;
+using System.Web;
 
 namespace EntityApi
 {
@@ -27,6 +28,8 @@ namespace EntityApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            Console.WriteLine("Startup");
+            Console.WriteLine("we are injecting cors policy");
             services.AddCors(options => {
                 options.AddPolicy("AllowSpecificOrigin",
                     builder => {
@@ -36,15 +39,17 @@ namespace EntityApi
                             .AllowAnyHeader();
                     });
             });
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
-                             .AddJsonOptions(x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+            Console.WriteLine("We are injecting mvc");
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
+            Console.WriteLine("We are injecting a database context here");
             services.AddDbContext<EntityContext> (options => options.UseSqlServer(Configuration.GetConnectionString("TestDB")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            Console.WriteLine("We are adding the cors policy");
             app.UseCors("AllowSpecificOrigin");
             if (env.IsDevelopment())
             {
@@ -56,6 +61,7 @@ namespace EntityApi
                 app.UseHsts();
             }
 
+            Console.WriteLine("We are adding MVC");
             app.UseMvc();
         }
     }
